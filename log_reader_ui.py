@@ -60,19 +60,25 @@ root.title("Log Visualizer")
 file_frame = tk.Frame(root)
 file_frame.pack()
 
-file_output = select_file_button = tk.Button(file_frame, text="Select File", command=lambda: log_file_retriever())
+file_output = select_file_button = tk.Button(
+    file_frame, text="Select File", command=lambda: log_file_retriever()
+)
 select_file_button.pack()
 
 graph_frame = tk.Frame(root)
 graph_frame.pack()
 
-graph_data_button = tk.Button(graph_frame, text="Graph Data", command=lambda: output_file_graphing(open('output_data.log')))
+graph_data_button = tk.Button(
+    graph_frame, text="Graph Data", command=lambda: output_file_graphing(open('output_data.log'))
+)
 graph_data_button.pack()
 
 close_frame = tk.Frame(root)
 close_frame.pack()
 
-close_frame_button = tk.Button(close_frame, text="Close", command=root.destroy)
+close_frame_button = tk.Button(
+    close_frame, text="Close", command=root.destroy
+)
 close_frame_button.pack()
 
 root.geometry("100x100")
