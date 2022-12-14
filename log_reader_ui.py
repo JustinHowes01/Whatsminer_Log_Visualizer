@@ -38,17 +38,17 @@ def output_file_graphing(file):
     wattage_x, wattage_y = data_organizer.overall_wattage(psu_wattages)
 
     plt.subplot(2, 2, 1)
-    plt.plot(hashrate_x[0::10], hashrate_y[0::10], label='Hashrate')
+    plt.plot(hashrate_x[0::50], hashrate_y[0::50], label='Hashrate')
     plt.legend()
 
     plt.subplot(2, 2, 2)
-    plt.plot(chip_temp_x[0::10], chip_temp_y1[0::10], label='SM0 Chip Temp')
-    plt.plot(chip_temp_x[0::10], chip_temp_y2[0::10], label='SM1 Chip Temp')
-    plt.plot(chip_temp_x[0::10], chip_temp_y3[0::10], label='SM2 Chip Temp')
+    plt.plot(chip_temp_x[0::50], chip_temp_y1[0::50], label='SM0 Chip Temp')
+    plt.plot(chip_temp_x[0::50], chip_temp_y2[0::50], label='SM1 Chip Temp')
+    plt.plot(chip_temp_x[0::50], chip_temp_y3[0::50], label='SM2 Chip Temp')
     plt.legend()
 
     plt.subplot(2, 2, 3)
-    plt.plot(wattage_x[0::10], wattage_y[0::10], label='PSU Wattage')
+    plt.plot(wattage_x[0::50], wattage_y[0::50], label='PSU Wattage')
     plt.legend()
 
     plt.show()
