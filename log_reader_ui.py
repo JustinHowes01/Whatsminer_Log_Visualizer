@@ -81,7 +81,7 @@ close_frame_button = tk.Button(
 )
 close_frame_button.pack()
 
-root.geometry("100x100")
+root.geometry("300x150")
 root.mainloop()
 
 quit()
