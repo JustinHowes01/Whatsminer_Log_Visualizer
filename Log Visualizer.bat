@@ -1,2 +1,2 @@
 @echo off
-start pyw log_reader_ui.py
+start pyw main.py
