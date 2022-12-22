@@ -2,6 +2,8 @@
 
 A Python program to visualize the 'miner-state' and 'long-miner-state' logs from a Whatsminertool log export
 
+[![Python 3.11](https://img.shields.io/badge/python-3.11-blue.svg)](https://www.python.org/downloads/release/python-3110/)
+
 ## Usage
 
 Clicking on the Batch file automatically starts the program (as long as Python 3.11 is installed). After the program is
