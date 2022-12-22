@@ -111,14 +111,3 @@ def overall_wattage(all_wattage_data):
         x.append(num)
 
     return x, y
-
-
-if __name__ == "__main__":
-    output_file = open('output_data.log', 'r')
-    (
-        hashrate_hashboard_avg,
-        sm0_hashrates, sm0_freqs, sm0_temps, sm0_chips,
-        sm1_hashrates, sm1_freqs, sm1_temps, sm1_chips,
-        sm2_hashrates, sm2_freqs, sm2_temps, sm2_chips,
-        psu_wattages
-    ) = output_file_unpacker(output_file)
