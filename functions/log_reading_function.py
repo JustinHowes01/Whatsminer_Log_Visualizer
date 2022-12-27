@@ -17,7 +17,17 @@ def long_miner_state_log_reader(log_file):
     for i in range(len(lines)):
         miner_data = lines[i]
 
-        if 'Miner' in miner_data:
+        if re.match(
+                '\d\d-\d\d \d\d:\d\d:\d\d '
+                '\d?\d?\d?\d?\d,\d?\d?\d,\d?\d?\d,\d?\d?\d\|'
+                '\d?\d?\d?\d?\d,\d?\d?\d,\d?\d?\d,\d?\d?\d\|'
+                '\d?\d?\d?\d?\d,\d?\d?\d,\d?\d?\d,\d?\d?\d\|'
+                '\d?\d?\d,\d?\d?\d,\d?\d?\d%,\d?\d?\d\|'
+                '\d?\d?\d?\d,\d?\d?\d?\d,\d?\d?\d',
+                miner_data
+        ):
+            pass
+        else:
             continue
 
         miner_data = re.sub('\d\d-\d\d \d\d:\d\d:\d\d ', '', miner_data)
@@ -56,41 +66,41 @@ def long_miner_state_log_reader(log_file):
             " | "
 
             "'SM0' "  # Hashboard SM0
-            "'%s' "   # TH/s
-            "'%s' "   # Hashboard Frequency
-            "'%s' "   # Hashboard Environmental Temperature
-            "'%s'"    # Hashboard Chip Temperature
+            "'%s' "  # TH/s
+            "'%s' "  # Hashboard Frequency
+            "'%s' "  # Hashboard Environmental Temperature
+            "'%s'"  # Hashboard Chip Temperature
             % (round(float(sm0[0]) / 1000, 2), sm0[1], sm0[2], sm0[3])
             +
             " | "
 
             "'SM1' "  # Hashboard SM1
-            "'%s' "   # TH/s
-            "'%s' "   # Hashboard Frequency
-            "'%s' "   # Hashboard Environmental Temperature
-            "'%s'"    # Hashboard Chip Temperature
+            "'%s' "  # TH/s
+            "'%s' "  # Hashboard Frequency
+            "'%s' "  # Hashboard Environmental Temperature
+            "'%s'"  # Hashboard Chip Temperature
             % (round(float(sm1[0]) / 1000, 2), sm1[1], sm1[2], sm1[3])
             +
             " | "
 
             "'SM2' "  # Hashboard SM2
-            "'%s' "   # TH/s
-            "'%s' "   # Hashboard Frequency
-            "'%s' "   # Hashboard Environmental Temperature
-            "'%s'"    # Hashboard Chip Temperature
+            "'%s' "  # TH/s
+            "'%s' "  # Hashboard Frequency
+            "'%s' "  # Hashboard Environmental Temperature
+            "'%s'"  # Hashboard Chip Temperature
             % (round(float(sm2[0]) / 1000, 2), sm2[1], sm2[2], sm2[3])
             +
             " | "
 
             "'%s' "  # In fan speed
-            "'%s'"   # Out fan speed
+            "'%s'"  # Out fan speed
             % (fan_speeds[0], fan_speeds[1])
             +
             " | "
 
             "'%s' "  # PSU fan speed
             "'%s' "  # PSU wattage
-            "'%s'"   # PSU voltage
+            "'%s'"  # PSU voltage
             % (psu[0], psu[1], psu[2])
         )
 
